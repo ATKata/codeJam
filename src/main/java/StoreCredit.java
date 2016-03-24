@@ -10,6 +10,11 @@ public class StoreCredit {
 
         List<String> strings = Files.readAllLines(path);
 
-        strings.stream().forEach(System.out::println);
+        strings.remove(0);
+
+        System.out.println(strings.get(0));
+
     }
+
+
 }
