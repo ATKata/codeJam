@@ -6,7 +6,7 @@ import java.util.List;
 
 public class StoreCredit {
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("A-small-practice.in");
+        Path path = Paths.get("classpath:/A-small-practice.in");
 
         List<String> strings = Files.readAllLines(path);
 
