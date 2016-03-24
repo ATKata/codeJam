@@ -26,7 +26,8 @@ public class StoreCredit {
             List<Integer> remainders = items.stream().map(j -> credit - j).collect(Collectors.toList());
             for (int j=0; j<remainders.size(); j++) {
                 if (items.contains(remainders.get(j))) {
-                    System.out.printf("%s%n", items[j]);
+                    int itemsIndex = items.indexOf(remainders.get(j));
+                    System.out.printf("%s%n", items[itemsIndex]);
 
                 }
             }
