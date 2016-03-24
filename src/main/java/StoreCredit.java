@@ -17,17 +17,17 @@ public class StoreCredit {
         strings.remove(0);
 
         for (int i = 0; i < strings.size(); i += 3) {
-            int j;
+
             Integer credit = Integer.valueOf(strings.get(i));
             List<Integer> items = Stream.of(strings.get(i + 2)
                         .split(" "))
-                        .map(Integer::valueOf).peek(System.out::println).collect(Collectors.toList());
+                        .map(Integer::valueOf).collect(Collectors.toList());
 
             List<Integer> remainders = items.stream().map(j -> credit - j).collect(Collectors.toList());
             for (int j=0; j<remainders.size(); j++) {
                 if (items.contains(remainders.get(j))) {
                     int itemsIndex = items.indexOf(remainders.get(j));
-                    System.out.printf("%s%s%n", j, itemsIndex);
+                    System.out.printf("%s %s%n", j, itemsIndex);
                     break;
                     // Fuck you all!
                 }
