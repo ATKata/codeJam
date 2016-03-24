@@ -2,9 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -27,17 +25,12 @@ public class StoreCredit {
             for (int j=0; j<remainders.size(); j++) {
                 if (items.contains(remainders.get(j))) {
                     int itemsIndex = items.lastIndexOf(remainders.get(j));
-
-                    System.out.printf("Case #%s: %s %s%n", i/3+1, j + 1, itemsIndex + 1);
+                    if(itemsIndex==j) continue;
+                    System.out.printf("Case #%s: %s %s%n", i/3+1, j + 1, itemsIndex + 1, items.get(itemsIndex));
                     break;
-                    // Fuck you all!
                 }
             }
-
-
         }
-
-//        formateedList = thingsToBuy();
     }
 
 
