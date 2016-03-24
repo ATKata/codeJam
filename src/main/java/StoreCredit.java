@@ -26,12 +26,9 @@ public class StoreCredit {
             List<Integer> remainders = items.stream().map(j -> credit - j).collect(Collectors.toList());
             for (int j=0; j<remainders.size(); j++) {
                 if (items.contains(remainders.get(j))) {
-                    int itemsIndex = items.indexOf(remainders.get(j));
+                    int itemsIndex = items.lastIndexOf(remainders.get(j));
 
-                    if(itemsIndex == j){
-                        continue;
-                    }
-                    System.out.printf("%s %s%n", j + 1, itemsIndex + 1);
+                    System.out.printf("Case #%s: %s %s%n", i%3+1, j + 1, itemsIndex + 1);
                     break;
                     // Fuck you all!
                 }
