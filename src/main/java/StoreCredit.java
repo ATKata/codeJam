@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 
 public class StoreCredit {
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("src/main/resources/A-small-practice.in");
+        Path path = Paths.get("src/main/resources/A-large-practice.in");
         List<String> strings = Files.readAllLines(path);
         strings.remove(0);
         int counter = 1;
@@ -32,7 +32,7 @@ public class StoreCredit {
         String selection = items.stream()
                 .flatMap(item -> items
                         .stream()
-                        .filter(otherItem -> item.index > otherItem.index)
+                        .filter(otherItem -> item.index < otherItem.index)
                         .map(otherItem -> new PairOfItem(item, otherItem))
                         .filter(pair -> pair.sum() == credit))
                 .map(PairOfItem::toString)
