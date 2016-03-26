@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class StoreCredit {
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("c:/A-large-practice.in");
+        Path path = Paths.get("src/main/resources/A-small-practice.in");
 
         List<String> strings = Files.readAllLines(path);
 
